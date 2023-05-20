@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "dIpJCVSLyVQa1GbLSMFKBSmHWDvl16aAzdBbw6HmP97Mk1y/m8BD9OieMcAmwLVKIRsyrdwOT5r9rsm01y7U7w==",
+  "success": true,
+  "projectFilePath": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Domain/Onion.Architecture.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/burakgumusfb/.nuget/packages/mediatr/12.0.1/mediatr.12.0.1.nupkg.sha512",
+    "/Users/burakgumusfb/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/Users/burakgumusfb/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

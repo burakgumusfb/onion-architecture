@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.API/Onion.Architecture.API.csproj": {}
+  },
+  "projects": {
+    "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.API/Onion.Architecture.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.API/Onion.Architecture.API.csproj",
+        "projectName": "Onion.Architecture.API",
+        "projectPath": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.API/Onion.Architecture.API.csproj",
+        "packagesPath": "/Users/burakgumusfb/.nuget/packages/",
+        "outputPath": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/burakgumusfb/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/sdk/7.0.302/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Application/Onion.Architecture.Application.csproj": {}
+  },
+  "projects": {
+    "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Application/Onion.Architecture.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Application/Onion.Architecture.Application.csproj",
+        "projectName": "Onion.Architecture.Application",
+        "projectPath": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Application/Onion.Architecture.Application.csproj",
+        "packagesPath": "/Users/burakgumusfb/.nuget/packages/",
+        "outputPath": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/burakgumusfb/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Domain/Onion.Architecture.Domain.csproj": {
+                "projectPath": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Domain/Onion.Architecture.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.5.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Domain/Onion.Architecture.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Domain/Onion.Architecture.Domain.csproj",
+        "projectName": "Onion.Architecture.Domain",
+        "projectPath": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Domain/Onion.Architecture.Domain.csproj",
+        "packagesPath": "/Users/burakgumusfb/.nuget/packages/",
+        "outputPath": "/Users/burakgumusfb/Desktop/my-github-repos/onion-architecture/Onion.Architecture/Onion.Architecture.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/burakgumusfb/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
