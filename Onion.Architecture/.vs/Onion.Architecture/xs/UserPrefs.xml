@@ -1,11 +1,16 @@
 ﻿<Properties StartupConfiguration="{495947E5-8A56-42F4-8D5D-A43F4A801E81}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Onion.Architecture.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <DisabledProjects>
     <String>Onion.Architecture/Onion.Architecture.API.csproj</String>
   </DisabledProjects>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="Onion.Architecture.API/Startup.cs">
     <Files>
-      <File FileName="Onion.Architecture.Persistence/Onion.Architecture.Persistence.csproj" Line="14" Column="11" />
+      <File FileName="Onion.Architecture.Persistence/Onion.Architecture.Persistence.csproj" />
       <File FileName="Onion.Architecture.Domain/Entities/Order.cs" />
       <File FileName="Onion.Architecture.Domain/Common/BaseEntity.cs" />
       <File FileName="Onion.Architecture.Domain/Common/ValueObject.cs" />
@@ -22,16 +27,13 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Onion.Architecture" expanded="True">
-            <Node name="Onion.Architecture.API" selected="True" />
+            <Node name="Onion.Architecture.API" expanded="True">
+              <Node name="Startup.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Onion.Architecture.API PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
