@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Onion.Architecture.Persistence;
 
 namespace Onion.Architecture.API
 {
@@ -45,6 +46,7 @@ namespace Onion.Architecture.API
 
             #region Scoped
             services.AddHttpContextAccessor();
+            services.AddPersistenceApplicationServices();
             #endregion
 
             #region Auth

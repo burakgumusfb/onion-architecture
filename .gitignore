@@ -69,3 +69,5 @@ ts-node
 /**/*.css.ts
 /**/*.css.shim.ts
 dll/
+.cache
+debug/

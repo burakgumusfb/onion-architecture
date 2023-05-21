@@ -7,7 +7,7 @@ namespace Onion.Architecture.Persistence;
 
 public static class ConfigureService
 {
-    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+    public static IServiceCollection AddPersistenceApplicationServices(this IServiceCollection services)
     {
         services.AddTransient<IOrderAppService,OrderAppService>();
         return services;
