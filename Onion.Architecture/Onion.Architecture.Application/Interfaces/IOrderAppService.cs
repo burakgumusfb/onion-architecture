@@ -3,9 +3,9 @@ using AutoMapper;
 
 namespace Onion.Architecture.Application.Interfaces
 {
-    public interface IOrderAppService
+    public interface IProductAppService
     {
-        public List<OrderListItem> GetOrders();
+        public List<ProductListItem> GetProducts();
     }
 }
 

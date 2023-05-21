@@ -13,7 +13,7 @@ namespace Onion.Architecture.Persistence.Context
 {
     public class OnionArchitectureDbContext : DbContext
     {
-        public DbSet<Order> Order { get; set; }
+        public DbSet<Product> Product { get; set; }
         public OnionArchitectureDbContext() : base()
         {
 
@@ -26,24 +26,24 @@ namespace Onion.Architecture.Persistence.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Order>().HasData(
-                                new Order
+            modelBuilder.Entity<Product>().HasData(
+                                new Product
                                 {
                                     Id = 1,
-                                    Description = "Descrption 1",
-                                    TotalAmount = 100
+                                    ProductCode = "PC-1",
+                                    ProductName = "Product 1"
                                 },
-                                new Order
+                                new Product
                                 {
                                     Id = 2,
-                                    Description = "Descrption 2",
-                                    TotalAmount = 200
+                                    ProductCode = "PC-2",
+                                    ProductName = "Product 2"
                                 },
-                                new Order
+                                new Product
                                 {
                                     Id = 3,
-                                    Description = "Descrption 3",
-                                    TotalAmount = 300
+                                    ProductCode = "PC-3",
+                                    ProductName = "Product 3"
                                 }
                          );
 

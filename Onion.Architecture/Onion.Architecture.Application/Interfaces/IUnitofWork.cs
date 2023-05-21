@@ -8,7 +8,7 @@ namespace Onion.Architecture.Application.Interfaces
 {
     public interface IUnitofWork
     {
-        IRepository<Order> OrderRepository { get; }
+        IRepository<Product> ProductRepository { get; }
         void BeginTransaction();
         void Commit();
         void Rollback();

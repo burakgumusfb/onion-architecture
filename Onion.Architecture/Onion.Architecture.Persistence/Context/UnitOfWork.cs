@@ -1,4 +1,3 @@
-using Advanced.Field.Data.Context;
 using Dapper;
 using EFCore.BulkExtensions;
 using Microsoft.AspNetCore.Http;
@@ -14,19 +13,19 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 
-namespace Advanced.Field.Data.Context
+namespace Onion.Architecture.Persistence.Context
 {
     public class UnitofWork : IUnitofWork
     {
         private bool Disposed = false;
         private readonly OnionArchitectureDbContext DB;
 
-        private IRepository<Order> _orderRepository;
+        private IRepository<Product> _productRepository;
 
         private IDbContextTransaction _transaction;
         private readonly IHttpContextAccessor HttpContextAccessor;
 
-        public IRepository<Order> OrderRepository => _orderRepository ??= new Repository<Order>(DB);
+        public IRepository<Product> ProductRepository => _productRepository ??= new Repository<Product>(DB);
 
         public UnitofWork(OnionArchitectureDbContext db, IHttpContextAccessor httpContextAccessor)
         {
