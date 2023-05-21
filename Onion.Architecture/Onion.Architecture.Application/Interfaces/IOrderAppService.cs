@@ -5,7 +5,7 @@ namespace Onion.Architecture.Application.Interfaces
 {
     public interface IOrderAppService
     {
-        public IEnumerable<OrderListItem> GetOrders();
+        public List<OrderListItem> GetOrders();
     }
 }
 

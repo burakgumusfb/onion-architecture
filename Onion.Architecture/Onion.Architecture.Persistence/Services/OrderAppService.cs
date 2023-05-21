@@ -6,10 +6,22 @@ namespace Onion.Architecture.Application.Mappings
 {
     public class OrderAppService : IOrderAppService
     {
-        public IEnumerable<OrderListItem> GetOrders()
+        private readonly IUnitofWork _uow;
+        public OrderAppService(IUnitofWork uow)
         {
-            yield return new OrderListItem() { OrderId = 1 };
-            yield return new OrderListItem() { OrderId = 2 };
+            _uow = uow;
+        }
+        public List<OrderListItem> GetOrders()
+        {
+           var serviceResult = new List<OrderListItem>();
+           
+           serviceResult = this._uow.OrderRepository.GetAll().Select(l => new OrderListItem
+           {
+                OrderId = l.Id
+
+           }).ToList();
+
+           return serviceResult;
         }
     }
 }

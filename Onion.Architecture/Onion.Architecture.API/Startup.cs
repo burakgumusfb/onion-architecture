@@ -1,10 +1,12 @@
 using System.Text;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Onion.Architecture.Persistence;
+using Onion.Architecture.Persistence.Context;
 
 namespace Onion.Architecture.API
 {
@@ -41,17 +43,15 @@ namespace Onion.Architecture.API
             });
 
             #region DbContext
-            //services.AddDbContext<AdvancedFieldDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("AdvancedFieldDB")));
+            services.AddDbContext<OnionArchitectureDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("OnionArchitectureDB")));
             #endregion
 
             #region Scoped
             services.AddHttpContextAccessor();
             services.AddPersistenceApplicationServices();
+            services.AddSingleton<IConfiguration>(Configuration);
             #endregion
 
-            #region Auth
-            //services.ConfigureAuth(Configuration);
-            #endregion
 
             services.AddControllers();
             services.AddMemoryCache();

@@ -14,7 +14,7 @@ namespace Onion.Architecture.Persistence.Context
     public class OnionArchitectureDbContext : DbContext
     {
         public DbSet<Order> Order { get; set; }
-        public OnionArchitectureDbContext():base()
+        public OnionArchitectureDbContext() : base()
         {
 
         }
@@ -23,37 +23,51 @@ namespace Onion.Architecture.Persistence.Context
         {
 
         }
-         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
-     {
-          foreach (var entry in ChangeTracker.Entries<BaseEntity>())
-          {
-               switch (entry.State)
-               {
-                    case EntityState.Added:
-                         entry.Entity.CreateDate = DateTime.Now;
 
-                         break;
-                    case EntityState.Modified:
-                         entry.Entity.UpdateDate = DateTime.Now;
-                         break;
-               }
-          }
-          return base.SaveChangesAsync(cancellationToken);
-     }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Order>().HasData(
+                                new Order
+                                {
+                                    Id = 1,
+                                    Description = "Descrption 1",
+                                    TotalAmount = 100
+                                },
+                                new Order
+                                {
+                                    Id = 2,
+                                    Description = "Descrption 2",
+                                    TotalAmount = 200
+                                },
+                                new Order
+                                {
+                                    Id = 3,
+                                    Description = "Descrption 3",
+                                    TotalAmount = 300
+                                }
+                         );
+
+            base.OnModelCreating(modelBuilder);
+
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-        
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                 .AddJsonFile("appsettings.json")
-                 .Build();
+            if (!optionsBuilder.IsConfigured)
+            {
+                  var currentDirectory = Directory.GetCurrentDirectory();
+                  string parentDirectory = Path.GetDirectoryName(currentDirectory);
 
-             string connectionString = configuration.GetConnectionString("OnionArchitectureDB");
+                  IConfiguration configuration = new ConfigurationBuilder()
+                                   .SetBasePath(parentDirectory + "/Onion.Architecture.API")
+                                   .AddJsonFile("appsettings.json")
+                                   .Build();
 
-             optionsBuilder
-                .UseSqlServer(connectionString)
-                .ConfigureWarnings(warnings => warnings.Ignore(CoreEventId.DetachedLazyLoadingWarning));
+                string connectionString = configuration.GetConnectionString("OnionArchitectureDB");
 
+                optionsBuilder
+                   .UseSqlServer(connectionString)
+                   .ConfigureWarnings(warnings => warnings.Ignore(CoreEventId.DetachedLazyLoadingWarning));
+            }
 
         }
     }

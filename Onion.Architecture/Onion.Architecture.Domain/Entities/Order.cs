@@ -5,7 +5,8 @@ namespace Onion.Architecture.Domain.Entities
 {
 	public class Order:BaseEntity
 	{
-		public int totalAmount { get; set; }
+		public string Description { get; set; }
+		public int TotalAmount { get; set; }
 	}
 }
 
