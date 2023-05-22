@@ -10,6 +10,7 @@ namespace Onion.Architecture.Application.Interfaces
     public interface IRepository<T> where T : BaseEntity
     {
         IQueryable<T> GetAll(params Expression<Func<T, object>>[] properties);
+        Task<IQueryable<T>> GetAllAsync(params Expression<Func<T, object>>[] properties);
         IQueryable<T> Where(Expression<Func<T, bool>> where);
         void Create(T entity);
         void Update(T entity);

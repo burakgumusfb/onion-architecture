@@ -49,6 +49,7 @@ namespace Onion.Architecture.API
             #region Scoped
             services.AddHttpContextAccessor();
             services.AddPersistenceApplicationServices();
+            services.AddApplicationServices();
             services.AddSingleton<IConfiguration>(Configuration);
             #endregion
 

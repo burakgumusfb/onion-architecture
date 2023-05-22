@@ -29,6 +29,17 @@ namespace Onion.Architecture.Application.Mappings
             }
             return query;
         }
+      public async Task<IQueryable<T>> GetAllAsync(params Expression<Func<T, object>>[] properties)
+        {
+            var query = _db.Set<T>().AsNoTracking();
+
+            if (properties.Any())
+            {
+                query = properties.Aggregate(query, (current, property) => current.Include(property));
+            }
+
+            return await Task.FromResult(query);
+        }
         public IQueryable<T> Where(Expression<Func<T, bool>> where)
         {
             return _db.Set<T>().Where(where);

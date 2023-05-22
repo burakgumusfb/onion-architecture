@@ -1,4 +1,5 @@
 ﻿using System;
+using Application.Features.ProductOperations.Queries;
 using AutoMapper;
 
 namespace Onion.Architecture.Application.Mappings
@@ -7,6 +8,7 @@ namespace Onion.Architecture.Application.Mappings
 	{
 		public MappingProfile()
 		{
+			CreateMap<ProductListItem,GetProductsQueryResponse>();
 		}
 	}
 }

@@ -1,5 +1,6 @@
 using System;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Onion.Architecture.Application.Interfaces;
 
 namespace Onion.Architecture.Application.Mappings
@@ -11,15 +12,17 @@ namespace Onion.Architecture.Application.Mappings
         {
             _uow = uow;
         }
-        public List<ProductListItem> GetProducts()
+        public async Task<List<ProductListItem>> GetProducts()
         {
            var serviceResult = new List<ProductListItem>();
            
-           serviceResult = this._uow.ProductRepository.GetAll().Select(l => new ProductListItem
+           serviceResult = await this._uow.ProductRepository.GetAll().Select(l => new ProductListItem
            {
-                ProductId = l.Id
+                Id = l.Id,
+                ProductCode = l.ProductCode,
+                ProductName = l.ProductName
 
-           }).ToList();
+           }).ToListAsync();
 
            return serviceResult;
         }
