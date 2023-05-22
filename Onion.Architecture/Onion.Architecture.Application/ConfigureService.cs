@@ -3,15 +3,16 @@ using FluentValidation;
 using MediatR;
 using Onion.Architecture.Application.Mappings;
 
-namespace Microsoft.Extensions.DependencyInjection;
-
-public static class ConfigureServices
+namespace Microsoft.Extensions.DependencyInjection
 {
-    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+    public static class ConfigureServices
     {
-        services.AddAutoMapper(typeof(MappingProfile));
-        services.AddMediatR(cfg => {cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());});
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(MappingProfile));
+            services.AddMediatR(cfg => { cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()); });
 
-        return services;
+            return services;
+        }
     }
 }

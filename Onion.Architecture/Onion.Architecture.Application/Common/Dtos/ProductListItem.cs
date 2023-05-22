@@ -1,9 +1,12 @@
-namespace Application.Features.ProductOperations.Queries
+using System;
+
+namespace Onion.Architecture.Application.Common.BaseModels.Dtos
 {
-    public class GetProductsQueryResponse
+    public class ProductListItem
     {
         public int Id { get; set; }
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
+
     }
 }

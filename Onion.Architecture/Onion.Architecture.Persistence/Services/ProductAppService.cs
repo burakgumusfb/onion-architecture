@@ -1,6 +1,7 @@
 using System;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Onion.Architecture.Application.Common.BaseModels.Dtos;
 using Onion.Architecture.Application.Interfaces;
 
 namespace Onion.Architecture.Application.Mappings
