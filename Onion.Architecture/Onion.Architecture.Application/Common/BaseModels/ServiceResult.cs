@@ -6,8 +6,8 @@ namespace Onion.Architecture.Application.Common.BaseModels
     public class ServiceResult<T> 
     {
         public T ResultObject { get; set; }
-        public string Message { get; set; }
-        public MessageType MessageType { get; set; } = MessageType.None;
+        public string Message { get; set; } = "Success";
+        public MessageType MessageType { get; set; } = MessageType.Success;
         public int StatusCode { get; set; }
 
         public ServiceResult()

@@ -1,6 +1,7 @@
 using System;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Onion.Architecture.Application.Common.BaseModels;
 using Onion.Architecture.Application.Common.BaseModels.Dtos;
 using Onion.Architecture.Application.Interfaces;
 
@@ -13,11 +14,11 @@ namespace Onion.Architecture.Application.Mappings
         {
             _uow = uow;
         }
-        public async Task<List<ProductListItem>> GetProducts()
+        public async Task<ServiceResult<IReadOnlyList<ProductListItem>>> GetProducts()
         {
-           var serviceResult = new List<ProductListItem>();
+           var serviceResult = new ServiceResult<IReadOnlyList<ProductListItem>>();
            
-           serviceResult = await this._uow.ProductRepository.GetAll().Select(l => new ProductListItem
+           serviceResult.ResultObject = await this._uow.ProductRepository.GetAll().Select(l => new ProductListItem
            {
                 Id = l.Id,
                 ProductCode = l.ProductCode,
