@@ -14,19 +14,24 @@ namespace Onion.Architecture.Application.Mappings
         {
             _uow = uow;
         }
+
         public async Task<ServiceResult<IReadOnlyList<ProductListItem>>> GetProducts()
         {
-           var serviceResult = new ServiceResult<IReadOnlyList<ProductListItem>>();
-           
-           serviceResult.ResultObject = await this._uow.ProductRepository.GetAll().Select(l => new ProductListItem
-           {
+            var serviceResult = new ServiceResult<IReadOnlyList<ProductListItem>>();
+
+            serviceResult.ResultObject = await this._uow.ProductRepository.GetAll().Select(l => new ProductListItem
+            {
                 Id = l.Id,
                 ProductCode = l.ProductCode,
                 ProductName = l.ProductName
 
-           }).ToListAsync();
+            }).ToListAsync();
 
-           return serviceResult;
+            return serviceResult;
+        }
+        public Task CreateProduct()
+        {
+            throw new NotImplementedException();
         }
     }
 }

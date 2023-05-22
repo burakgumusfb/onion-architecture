@@ -8,6 +8,7 @@ namespace Onion.Architecture.Application.Interfaces
     public interface IProductAppService
     {
         public Task<ServiceResult<IReadOnlyList<ProductListItem>>> GetProducts();
+        Task CreateProduct();
     }
 }
 
