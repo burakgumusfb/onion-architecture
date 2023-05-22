@@ -19,7 +19,7 @@ namespace Onion.Architecture.Application.Features.ProductOperations.Commands.Cre
         public Task<CreateProductCommandResponse> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
             
-            throw new Exception();
+            throw new Exception();  
         }
     }
 }
