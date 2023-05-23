@@ -27,26 +27,23 @@ namespace Onion.Architecture.Persistence.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>().HasData(
-                                new Product
-                                {
-                                    Id = 1,
-                                    ProductCode = "PC-1",
-                                    ProductName = "Product 1"
-                                },
-                                new Product
-                                {
-                                    Id = 2,
-                                    ProductCode = "PC-2",
-                                    ProductName = "Product 2"
-                                },
-                                new Product
-                                {
-                                    Id = 3,
-                                    ProductCode = "PC-3",
-                                    ProductName = "Product 3"
-                                }
-                         );
+            // modelBuilder.Entity<Product>().HasData(
+            //                     new Product
+            //                     (
+            //                         "PC-1",
+            //                         "Product 1"
+            //                     ),
+            //                     new Product
+            //                     (
+            //                        "PC-2",
+            //                        "Product 2"
+            //                     ),
+            //                     new Product
+            //                     (
+            //                         "PC-3",
+            //                         "Product 3"
+            //                     )
+            //              );
 
             base.OnModelCreating(modelBuilder);
 

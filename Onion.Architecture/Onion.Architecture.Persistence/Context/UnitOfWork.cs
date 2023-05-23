@@ -35,27 +35,27 @@ namespace Onion.Architecture.Persistence.Context
             HttpContextAccessor = httpContextAccessor;
         }
 
-        public void BeginTransaction()
+        public async Task BeginTransactionAsync()
         {
             if (DB.Database.CurrentTransaction == null)
             {
-                _transaction = DB.Database.BeginTransaction();
+                _transaction = await DB.Database.BeginTransactionAsync();
             }
         }
-        public void Commit()
+        public async Task CommitAsync()
         {
             if (DB.Database.CurrentTransaction != null)
             {
-                _transaction.Commit();
-                _transaction.Dispose();
+                await _transaction.CommitAsync();
+                await _transaction.DisposeAsync();
             }
         }
-        public void Rollback()
+        public async Task RollbackAsync()
         {
             if (DB.Database.CurrentTransaction != null)
             {
-                _transaction.Rollback();
-                _transaction.Dispose();
+                await _transaction.RollbackAsync();
+                await _transaction.DisposeAsync();
             }
         }
 

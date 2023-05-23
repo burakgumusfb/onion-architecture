@@ -10,7 +10,7 @@ namespace Onion.Architecture.Application.Interfaces
 {
     public interface IStockAppService
     {
-        Task<int> Create(Stock entity);
+        Task<int> CreateAsync(Stock entity);
     }
 }
 

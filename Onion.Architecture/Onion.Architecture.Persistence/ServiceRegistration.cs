@@ -13,6 +13,7 @@ public static class ServiceRegistration
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         services.AddScoped<IUnitofWork, UnitofWork>();
         services.AddScoped<IProductAppService,ProductAppService>();
+        services.AddScoped<IStockAppService,StockAppService>();
         return services;
     }
 }

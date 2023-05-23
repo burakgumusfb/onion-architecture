@@ -8,6 +8,7 @@ using Onion.Architecture.Application.Interfaces;
 using Onion.Architecture.Domain.Common;
 using Onion.Architecture.Domain.Entities;
 using Onion.Architecture.Persistence.Context;
+using Onion.Architecture.Domain.Extensions;
 
 namespace Onion.Architecture.Application.Mappings
 {
@@ -44,7 +45,7 @@ namespace Onion.Architecture.Application.Mappings
         {
             return _db.Set<T>().Where(where);
         }
-        public async Task<int> Create(T entity)
+        public async Task<int> CreateAsync(T entity)
         {
             if (entity == null)
             {
@@ -52,10 +53,12 @@ namespace Onion.Architecture.Application.Mappings
             }
             entity.CreateDate = DateTime.Now;
             entity.CreateUserId = UserID;
-            _db.Add(entity);
-            return await _db.SaveChangesAsync();
+            await _db.AddAsync(entity);
+            await _db.SaveChangesAsync();
+
+            return entity.GetType().GetProperty("Id").GetValue(entity,null).ToInt32();
         }
-        public async Task Update(T entity)
+        public async Task UpdateAsync(T entity)
         {
             if (entity == null)
             {
@@ -71,7 +74,7 @@ namespace Onion.Architecture.Application.Mappings
             _db.Entry(entity).Property(x => x.CreateDate).IsModified = false;
             await _db.SaveChangesAsync();
         }
-        public async Task HardDelete(T entity)
+        public async Task HardDeleteAsync(T entity)
         {
             if (entity == null)
             {
@@ -80,7 +83,7 @@ namespace Onion.Architecture.Application.Mappings
             _db.Remove(entity);
             await _db.SaveChangesAsync();
         }
-        public async Task BulkInsert(List<T> entities)
+        public async Task BulkInsertAsync(List<T> entities)
         {
             var createDate = DateTime.Now;
             foreach (var entity in entities)
@@ -90,7 +93,7 @@ namespace Onion.Architecture.Application.Mappings
             }
            await _db.BulkInsertAsync(entities);
         }
-        public async Task BulkUpdate(List<T> entities)
+        public async Task BulkUpdateAsync(List<T> entities)
         {
             var modifyDate = DateTime.Now;
             foreach (var entity in entities)
@@ -109,7 +112,7 @@ namespace Onion.Architecture.Application.Mappings
             };
             await _db.BulkUpdateAsync(entities, bulkConfig);
         }
-        public async Task BulkDelete(List<T> entities)
+        public async Task BulkDeleteAsync(List<T> entities)
         {
             var deleteDate = DateTime.Now;
             foreach (var entity in entities)
@@ -131,7 +134,7 @@ namespace Onion.Architecture.Application.Mappings
             };
            await _db.BulkUpdateAsync(entities, bulkConfig);
         }
-        public async Task BulkHardDelete(List<T> entities)
+        public async Task BulkHardDeleteAsync(List<T> entities)
         {
             await _db.BulkDeleteAsync(entities);
         }

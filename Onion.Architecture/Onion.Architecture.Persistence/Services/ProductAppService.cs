@@ -33,9 +33,9 @@ namespace Onion.Architecture.Application.Mappings
             return serviceResult;
         }
 
-        public async Task<int> Create(Product product)
+        public async Task<int> CreateAsync(Product product)
         {
-            return await this._uow.ProductRepository.Create(product);
+            return await this._uow.ProductRepository.CreateAsync(product);
         }
     }
 }

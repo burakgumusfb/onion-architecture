@@ -11,7 +11,7 @@ namespace Onion.Architecture.Application.Interfaces
     public interface IProductAppService
     {
         public Task<ServiceResult<IReadOnlyList<ProductListItem>>> GetProducts();
-        Task<int> Create(Product entity);
+        Task<int> CreateAsync(Product entity);
     }
 }
 

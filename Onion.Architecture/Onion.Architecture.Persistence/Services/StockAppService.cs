@@ -18,9 +18,9 @@ namespace Onion.Architecture.Application.Mappings
             _uow = uow;
         }
 
-        public async Task<int> Create(Stock entity)
+        public async Task<int> CreateAsync(Stock entity)
         {
-            return await this._uow.StockRepository.Create(entity);
+            return await this._uow.StockRepository.CreateAsync(entity);
         }
     }
 }
