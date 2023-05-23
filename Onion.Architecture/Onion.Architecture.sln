@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Architecture.Persiste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Architecture.API", "Onion.Architecture.API\Onion.Architecture.API.csproj", "{495947E5-8A56-42F4-8D5D-A43F4A801E81}"
 EndProject
-Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "Onion.Architecture.API", "Onion.Architecture\Onion.Architecture.API.csproj", "{21A0F0EC-C0B2-4C5E-BB69-D64A2246AE51}"
+Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "Onion.Architecture.API", "Onion.Architecture\Onion.Architecture.API.csproj", "{FB843F70-F02A-4E67-B0FD-33DDB33B24FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onion.Architecture.API.Tests", "Onion.Architecture.API.Tests\Onion.Architecture.API.Tests.csproj", "{6C6C22AD-466C-4861-AE9A-43BAAAF4CD77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +43,14 @@ Global
 		{495947E5-8A56-42F4-8D5D-A43F4A801E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{495947E5-8A56-42F4-8D5D-A43F4A801E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{495947E5-8A56-42F4-8D5D-A43F4A801E81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{21A0F0EC-C0B2-4C5E-BB69-D64A2246AE51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{21A0F0EC-C0B2-4C5E-BB69-D64A2246AE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{21A0F0EC-C0B2-4C5E-BB69-D64A2246AE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{21A0F0EC-C0B2-4C5E-BB69-D64A2246AE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB843F70-F02A-4E67-B0FD-33DDB33B24FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB843F70-F02A-4E67-B0FD-33DDB33B24FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB843F70-F02A-4E67-B0FD-33DDB33B24FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB843F70-F02A-4E67-B0FD-33DDB33B24FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C6C22AD-466C-4861-AE9A-43BAAAF4CD77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C6C22AD-466C-4861-AE9A-43BAAAF4CD77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C6C22AD-466C-4861-AE9A-43BAAAF4CD77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C6C22AD-466C-4861-AE9A-43BAAAF4CD77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

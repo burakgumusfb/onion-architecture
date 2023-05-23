@@ -24,15 +24,13 @@ namespace Onion.Architecture.Persistence.Context
         private IRepository<Stock> _stockRepository;
 
         private IDbContextTransaction _transaction;
-        private readonly IHttpContextAccessor HttpContextAccessor;
 
         public IRepository<Product> ProductRepository => _productRepository ??= new Repository<Product>(DB);
         public IRepository<Stock> StockRepository => _stockRepository ??= new Repository<Stock>(DB);
 
-        public UnitofWork(OnionArchitectureDbContext db, IHttpContextAccessor httpContextAccessor)
+        public UnitofWork(OnionArchitectureDbContext db)
         {
             DB = db;
-            HttpContextAccessor = httpContextAccessor;
         }
 
         public async Task BeginTransactionAsync()
