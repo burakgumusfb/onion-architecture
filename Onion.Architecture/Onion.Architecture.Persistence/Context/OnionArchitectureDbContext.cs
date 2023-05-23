@@ -13,7 +13,8 @@ namespace Onion.Architecture.Persistence.Context
 {
     public class OnionArchitectureDbContext : DbContext
     {
-        public DbSet<Product> Product { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Stock> Stocks {get;set;}
         public OnionArchitectureDbContext() : base()
         {
 

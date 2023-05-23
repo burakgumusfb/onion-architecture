@@ -11,5 +11,6 @@ namespace Onion.Architecture.Application.Features.ProductOperations.Commands.Cre
     {
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
+        public int StockQuantity { get; set; }
     }
 }

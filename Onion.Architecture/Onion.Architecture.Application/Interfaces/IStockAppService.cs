@@ -8,10 +8,9 @@ using Onion.Architecture.Domain.Entities;
 
 namespace Onion.Architecture.Application.Interfaces
 {
-    public interface IProductAppService
+    public interface IStockAppService
     {
-        public Task<ServiceResult<IReadOnlyList<ProductListItem>>> GetProducts();
-        Task<int> Create(Product entity);
+        Task<int> Create(Stock entity);
     }
 }
 

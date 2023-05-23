@@ -9,6 +9,7 @@ namespace Onion.Architecture.Application.Interfaces
     public interface IUnitofWork
     {
         IRepository<Product> ProductRepository { get; }
+        IRepository<Stock> StockRepository{get;}
         void BeginTransaction();
         void Commit();
         void Rollback();

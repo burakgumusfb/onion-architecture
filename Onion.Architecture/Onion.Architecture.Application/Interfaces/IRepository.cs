@@ -12,14 +12,14 @@ namespace Onion.Architecture.Application.Interfaces
         IQueryable<T> GetAll(params Expression<Func<T, object>>[] properties);
         Task<IQueryable<T>> GetAllAsync(params Expression<Func<T, object>>[] properties);
         IQueryable<T> Where(Expression<Func<T, bool>> where);
-        void Create(T entity);
-        void Update(T entity);
-        void HardDelete(T entity);
-        void BulkInsert(List<T> entities);
-        void BulkUpdate(List<T> entities);
-        void BulkDelete(List<T> entities);
-        void BulkHardDelete(List<T> entities);
-        void Delete(T entity);
+        Task<int> Create(T entity);
+        Task Update(T entity);
+        Task HardDelete(T entity);
+        Task BulkInsert(List<T> entities);
+        Task BulkUpdate(List<T> entities);
+        Task BulkDelete(List<T> entities);
+        Task BulkHardDelete(List<T> entities);
+        Task Delete(T entity);
     }
 }
 

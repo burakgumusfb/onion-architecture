@@ -3,7 +3,10 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Onion.Architecture.Application.Common.BaseModels;
 using Onion.Architecture.Application.Common.BaseModels.Dtos;
+using Onion.Architecture.Application.Features.ProductOperations.Commands.CreateProduct;
 using Onion.Architecture.Application.Interfaces;
+using Onion.Architecture.Domain.Common;
+using Onion.Architecture.Domain.Entities;
 
 namespace Onion.Architecture.Application.Mappings
 {
@@ -29,9 +32,10 @@ namespace Onion.Architecture.Application.Mappings
 
             return serviceResult;
         }
-        public Task CreateProduct()
+
+        public async Task<int> Create(Product product)
         {
-            throw new NotImplementedException();
+            return await this._uow.ProductRepository.Create(product);
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Onion.Architecture.Application.Mappings
             }
             return query;
         }
-      public async Task<IQueryable<T>> GetAllAsync(params Expression<Func<T, object>>[] properties)
+        public async Task<IQueryable<T>> GetAllAsync(params Expression<Func<T, object>>[] properties)
         {
             var query = _db.Set<T>().AsNoTracking();
 
@@ -44,7 +44,7 @@ namespace Onion.Architecture.Application.Mappings
         {
             return _db.Set<T>().Where(where);
         }
-        public void Create(T entity)
+        public async Task<int> Create(T entity)
         {
             if (entity == null)
             {
@@ -53,9 +53,9 @@ namespace Onion.Architecture.Application.Mappings
             entity.CreateDate = DateTime.Now;
             entity.CreateUserId = UserID;
             _db.Add(entity);
-            _db.SaveChanges();
+            return await _db.SaveChangesAsync();
         }
-        public void Update(T entity)
+        public async Task Update(T entity)
         {
             if (entity == null)
             {
@@ -69,18 +69,18 @@ namespace Onion.Architecture.Application.Mappings
             _db.Entry(entity).Property(x => x.ModifyUserId).IsModified = false;
             _db.Entry(entity).Property(x => x.CreateUserId).IsModified = false;
             _db.Entry(entity).Property(x => x.CreateDate).IsModified = false;
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
         }
-        public void HardDelete(T entity)
+        public async Task HardDelete(T entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
             _db.Remove(entity);
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
         }
-        public void BulkInsert(List<T> entities)
+        public async Task BulkInsert(List<T> entities)
         {
             var createDate = DateTime.Now;
             foreach (var entity in entities)
@@ -88,9 +88,9 @@ namespace Onion.Architecture.Application.Mappings
                 entity.CreateDate = createDate;
                 entity.CreateUserId = UserID;
             }
-            _db.BulkInsert(entities);
+           await _db.BulkInsertAsync(entities);
         }
-        public void BulkUpdate(List<T> entities)
+        public async Task BulkUpdate(List<T> entities)
         {
             var modifyDate = DateTime.Now;
             foreach (var entity in entities)
@@ -107,9 +107,9 @@ namespace Onion.Architecture.Application.Mappings
                     "GUID",
                 }
             };
-            _db.BulkUpdate(entities, bulkConfig);
+            await _db.BulkUpdateAsync(entities, bulkConfig);
         }
-        public void BulkDelete(List<T> entities)
+        public async Task BulkDelete(List<T> entities)
         {
             var deleteDate = DateTime.Now;
             foreach (var entity in entities)
@@ -129,13 +129,13 @@ namespace Onion.Architecture.Application.Mappings
                     "GUID",
                 }
             };
-            _db.BulkUpdate(entities, bulkConfig);
+           await _db.BulkUpdateAsync(entities, bulkConfig);
         }
-        public void BulkHardDelete(List<T> entities)
+        public async Task BulkHardDelete(List<T> entities)
         {
-            _db.BulkDelete(entities);
+            await _db.BulkDeleteAsync(entities);
         }
-        public void Delete(T entity)
+        public async Task Delete(T entity)
         {
             if (entity == null)
             {
@@ -149,7 +149,7 @@ namespace Onion.Architecture.Application.Mappings
             _db.Entry(entity).Property(x => x.CreateUserId).IsModified = false;
             _db.Entry(entity).Property(x => x.CreateDate).IsModified = false;
             _db.Entry(entity).State = EntityState.Modified;
-            _db.SaveChanges();
+            await  _db.SaveChangesAsync();
         }
         protected void Dispose(bool disposing)
         {
