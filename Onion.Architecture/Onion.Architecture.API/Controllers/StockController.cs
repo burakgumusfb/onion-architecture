@@ -19,11 +19,11 @@ namespace Onion.Architecture.API.Controllers
         }
         
         [HttpPost("create-stock")]
-        public async Task<IActionResult> CreateProduct(CreateStockCommandRequest request)
+        public async Task<IActionResult> CreateStock(CreateStockCommandRequest request)
         {
-            var createProductCommand = new CreateStockCommandValidator();
+            var createStockCommand = new CreateStockCommandValidator();
 
-            var result = createProductCommand.Validate(request);
+            var result = createStockCommand.Validate(request);
 
             if (result.IsValid)
             {
